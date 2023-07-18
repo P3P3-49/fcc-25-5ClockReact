@@ -1,11 +1,10 @@
 import React from "https://cdn.skypack.dev/react";
 import ReactDOM from "https://cdn.skypack.dev/react-dom";
 import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
 import './App.css'
-
-function App() {
+  
   class TimeLengthControl extends React.Component {
     constructor(props) {
       super(props);
@@ -17,20 +16,20 @@ function App() {
       let isBreak = true;
       if (type === "session") isBreak = false;
       return (
-        <div class="container card mx-auto #fff59d">
+        <div className="container card mx-auto #fff59d">
             <div>
-              <div className="length-container fs-5">
-                <div className="card-header shadow-sm mb-4 indigo white-text">
+              <div className="length-container">
+                <div className="card-header shadow-sm mb-4 indigo white-text fs-4">
                   <h2 id={type + "-label"}>{typeUpper + " Length"}</h2>
                 </div>
                 <div className="length-controls">
-                  <p id={type + "-length"} className="length-number fw-bold fs-1">
+                  <p id={type + "-length"} className="length-number fw-bold fs-2">
                     {this.props.length}
                   </p>
                   <button
                     id={type + "-decrement"}
                     onClick={() => this.props.handleDec(isBreak)}
-                    className="waves-effect waves-light btn red">
+                    className="waves-effect waves-light btn grey">
                       <i className="material-icons">exposure_neg_1</i>
                   </button>
                   <button
@@ -252,7 +251,7 @@ function App() {
             id="beep"
             src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"
           />
-        <div className="title text-center fw-bold fs-1 py-5 white-text">25 + 5 Clock - by <a href="https://www.github.com/P3P3-49" target="_blank">@P3P3_49</a></div>
+          <div className="title text-center fw-bold fs-1 py-5 white-text">25 + 5 Clock - by <a href="https://www.github.com/P3P3-49" target="_blank">@P3P3_49</a></div>
         </div>
       );
     }
@@ -260,6 +259,4 @@ function App() {
   
   ReactDOM.render(<App />, document.getElementById("root"));
 
-}
-
-export default App
+export default App;
